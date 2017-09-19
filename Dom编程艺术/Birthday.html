@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        select{
+            width: 50px;
+            border: solid 1px #aaa;
+            background-color: #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <select name="year" id="year">
+        <option value="0">--</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+    </select>年
+    <select name="month" id="month">
+        <option value="0">--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>月
+    <select name="date" id="date">
+        <option value="0">--</option>
+    </select>日
+    <script type="text/javascript">
+    window.onload=function(){
+        function addEvent(obj,type,fn){
+          if(obj.addEventListener){
+            return obj.addEventListener(type,fn);
+          }else if(obj.attachEvent){
+            return obj.attachEvent('on'+type,function(){
+                fn.call(obj);
+            });
+          }
+        }
+ 
+        
+        function getDays(year,month){         
+            return new Date(year,month,0).getDate();          
+        }
+ 
+        function addDayoption(years,months){
+            var year = years.options[years.selectedIndex].value;
+            var month = months.options[months.selectedIndex].value;
+            if(year == 0){
+                months.options[0].selected = true;
+                dates.options[0].selected = true;
+                return;
+            }
+            if(month == 0){
+                dates.options[0].selected = true;
+                return;
+            }
+ 
+            var days = getDays(year,month);
+            console.log(days);
+            for(var i=1;i<=days;i++){
+                dates.options.add(new Option(i,i)) ;  
+            }
+ 
+        }
+       
+        var years=document.getElementById("year");
+        var months=document.getElementById("month");
+        var dates=document.getElementById("date");
+ 
+        addEvent(years,"change",function(){
+            var _months = months;
+            addDayoption(this,_months);
+        })     
+ 
+        addEvent(months,'change',function(){
+            var _years = years;
+            addDayoption(_years,this);
+        });     
+    }
+ 
+    </script>
+</body>
+</html>

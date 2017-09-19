@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementsByClassName兼容</title>
+</head>
+<body>
+  <div id="example">
+   <p id="p1" class="aaa bbb"/>
+   <p id="p2" class="aaa ccc"/>
+   <p id="p3" class="bbb ccc"/>
+  </div>
+ 
+  <script type="text/javascript">
+   
+      function getElementsByClassName(element, names) {
+        if (element.getElementsByClassName) {
+            return element.getElementsByClassName(names); 
+        } else {
+            var children = element.getElementsByTagName('*'); 
+            var elements = new Array();
+            var flag = false;
+            for(var i=0; i<children.length; i++){
+                var child = children[i];
+                 
+                var classname = child.className.split(' ');
+ 
+                var name = names.split(' ');
+ 
+                for (var j=0; j<name.length;j++) {
+                    if (classname.indexOf(name[j])== -1){  
+                        flag = false;   
+                        break;                                    
+                    }else {
+                        flag = true;                    
+                    }
+                }
+ 
+                if(flag){
+                    elements.push(child);
+                }
+            }
+             
+            return (elements.length == 0? null:elements);
+        }
+    }
+ 
+    var example = document.getElementById('example');
+   console.log( getElementsByClassName(example,'aaa bbb'));
+   console.log( getElementsByClassName(example, 'bbb ccc'));
+   console.log( getElementsByClassName(example, 'ccc bbb'));
+     
+</script>
+     
+</body>
+</html>
