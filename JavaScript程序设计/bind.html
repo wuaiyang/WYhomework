@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object.create兼容</title>
+</head>
+<body>
+    <script type="text/javascript">
+  
+        if (!Function.prototype.bind) {
+            Function.prototype.bind = function (context) { 
+                var args = arguments,
+                obj = arguments[0],
+                func = this;
+                return function(){
+                    var argc = Array.prototype.slice.call(args,1);        
+                    return func.apply(obj,argc);
+                }   
+            }
+        }
+ 
+        function move(x, y) {
+            this.x += x;
+            this.y += y;
+        }
+ 
+        var point = {x:1, y:2};
+        var pointmove = move.bind(point, 2, 2);
+        pointmove(); 
+        console.log(point);
+    </script>
+</body>
+</html>

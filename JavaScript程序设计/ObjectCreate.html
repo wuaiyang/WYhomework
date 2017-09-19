@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object.create兼容</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Object.prototype.create = function(obj) {  
+            if(Object.create){  
+               return Object.create(obj); 
+            }else{
+               function F(){  
+                 F.prototype = obj; 
+                  return new F();  
+                }  
+            }  
+        };
+ 
+          var a = Object.create({x: 1, y: 2});
+          alert(a.x);
+    </script>
+</body>
+</html>
