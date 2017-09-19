@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转义</title>
+</head>
+<body>
+ <script type="text/javascript">
+  var escapeHTML=function(str){
+    var map={
+        '>':'&gt;',
+        '<':'&lt;',
+        '"':'&quot;'  
+        };
+    for(var p in map){
+        console.log(p);
+        console.log(map[p]);
+        str=str.replace(new RegExp(p,'g'),map[p]);
+        }
+    return str;
+  }
+ 
+  console.log(escapeHTML('<div>Tom&Jerry</div>'));
+  console.log(escapeHTML('<input type="text" name="mobile">'))
+     
+</body>
+</html>

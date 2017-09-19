@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>CSS作业3</title>
+ <style type="text/css">
+ *{
+ margin: 0;
+ padding: 0;
+ }
+
+ .slide{
+ width: 200px;
+ height: 100px;
+ background-color: #cae7e6;
+ margin: 10px auto;
+ position: relative;
+ }
+ .pointer{
+ position: absolute;
+ right: 10px;
+ bottom: 10px;
+ line-height: 5px;
+ }
+   
+ i{
+ display: inline-block;
+ background-color: black;
+ width: 10px;
+ height: 10px;
+ border-radius: 10px;
+ margin-left: 5px;
+ }
+ i.current{
+ background-color: white;
+ }
+ </style>
+</head>
+<body>
+ <div class="slide">
+ <!-- 图片省略 -->
+ <!-- 以下是指示器 -->
+ <div class="pointer"><i class="current"></i><i></i><i></i></div>
+</div>
+</body>
+</html>

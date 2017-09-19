@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>考试2</title>
+ <style type="text/css">
+ *{
+ margin: 0;
+ padding: 0;
+    }
+    .wrap{
+       margin-top: 15px;
+    }
+    .talrrow {
+    display: table-row;
+    }
+    label{
+       width: 60px;
+       display: table-cell;
+       font:12px "宋体";
+       vertical-align: middle;
+    }
+    input{
+       border:1px solid #ddd;
+       width: 200px;
+       height: 20px;
+       box-sizing: border-box;
+       display: table-cell;
+       vertical-align: top;
+    }
+    button{
+    font:12px "宋体";
+    border:none;
+    width: 40px;
+    height: 20px;
+    color: white;
+    background-color: #54aede;
+    text-align: center;
+    display: table-cell;
+    margin-top:15px;
+    }
+   
+ </style>
+</head>
+<body>
+    <p class="heading">登录网易通行证</p>
+    <form action="/login" method="post">
+    <div class="wrap">
+      <div class="talrrow">
+        <label for="name">用户名：</label>
+        <input type="text" name="name" id="name">
+      </div>
+    </div>
+    <div  class="wrap">
+      <div class="talrrow">
+        <label for="passwards">密码：</label>
+        <input type="passward" id="passwards">
+      </div>
+    </div>
+    <div class="talrrow">
+        <label></label>
+        <button type="button">登录</button>
+    </div>
+    </form>
+</body>
+</html>

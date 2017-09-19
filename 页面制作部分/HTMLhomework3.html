@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作业3</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    font: 14px Tahoma,Helvetica,Arial,'微软雅黑',sans-serif；
+  }
+  body{
+    padding: 50px;
+  }
+  .m-form{
+    min-height:400px;
+  }
+  .m-form div{
+    padding: 10px 0;
+  }
+  .m-form label{
+    margin: 0 15px 0 10px;
+  }
+  .m-form .txt{
+    width:180px;
+    height: 30px;
+  }
+  .m-form select{
+    width:100px;
+    height: 30px;
+  }
+  .m-form textarea{
+    width:200px;
+  }
+  .m-form .sign{
+    vertical-align: top;
+  }
+  .m-form .btn{
+    width:75px;
+    height:30px;
+    margin-left: 52px;
+    background-color: #d853b7;
+    color: white;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <form action="/login"  method="post" class="m-form">
+    <div>
+      <label for="file">头像</label><input id="file" type="file">
+    </div>  
+    <div>
+      <label for="nickname">昵称</label><input id="nickname" class="txt" type="text">
+    </div>
+    <div>
+      <label for="education">学历</label><select 
+      id="education">
+            <option value="0" selected>大专</option>
+            <option value="1">本科</option>
+        </select>
+    </div>  
+    <div>
+      <label>性别</label>
+      <input class="rd" type="radio" name="sex" id="rd_0" value="nan" checked><label for="rd_0" >男</label>
+      <input class="rd" type="radio" name="sex" id="rd_1" value="nv"><label for="rd_1" >女</label>
+    </div>
+    <div>
+      <label>爱好</label>
+      <input class="cb" type="checkbox" name="hobby" id="cb_0" value="dianying" checked><label for="cb_0">电影</label>
+      <input class="cb" type="checkbox" name="hobby" id="cb_1" value="sheying"><label for="cb_1">摄影</label>
+      <input class="cb" type="checkbox" name="hobby" id="cb_2" value="yinyue"><label for="cb_2">音乐</label>
+      <input class="cb" type="checkbox" name="hobby" id="cb_3" value="yuedu" checked><label for="cb_3">阅读</label>
+     </div>
+    <div>
+      <label class="sign" for="sign">签名</label><textarea 
+      id="sign" name="sign" rows="4" ></textarea>
+    </div> 
+    <div>
+      <button class="btn" type="submit">保&nbsp存</button>
+    </div>
+  </form>
+</body>
+</html>

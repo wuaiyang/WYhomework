@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>CSS作业1</title>
+ <style type="text/css">
+ *{
+ margin: 0;
+ padding: 0;
+ font: 50px "微软雅黑",sans-serif;
+ color: white;
+ text-align: center;
+ }
+ .parent{
+ width: 810px;
+ margin: 10px auto;
+ }
+ .parent div{
+ float: left;
+ height: 200px;
+ line-height: 200px;
+ }
+ .side{
+ width: 200px;
+ background-color: red;
+ margin-right: 10px;
+ }
+ .main{
+ width: 600px;
+ background-color: blue;
+ }
+ .clear:after{
+ content: '.';
+ display: block;
+ clear: both;
+ height: 0;
+ overflow: hidden;
+ visibility: hidden;
+ }
+ </style>
+</head>
+<body>
+ <div class="parent clear"> 
+       <div class="side">侧栏</div>
+       <div class="main">主栏</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>构造Person</title>
+</head>
+<body>
+ <script type="text/javascript">
+//一般的方法
+function Person(name,age){
+   this.introduce=function(){
+     console.log("I am "+name+", I am "+age+" years old!");
+   }
+}
+ 
+var jerry = new Person("Jerry", 2);
+ jerry.introduce();
+var tom = new Person("Tom", 12);
+ tom.introduce();
+ 
+ //运用原型
+function Person2(name,age){
+this.name=name;
+this.age=age;
+}
+ 
+Person2.prototype.introduce2=function(){
+   console.log("I am "+this.name+", I am "+this.age+" years old!");
+}
+ 
+var jerry = new Person2("Jerry", 2);
+ jerry.introduce2();
+var tom = new Person2("Tom", 12);
+ tom.introduce2();
+ 
+ </script>
+ 
+</body>
+</html>

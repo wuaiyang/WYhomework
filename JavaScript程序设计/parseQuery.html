@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>url解析</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function parseQuery(query){
+            var q = query.match(/.*\?(.*[^#])/);
+            //运用正则表达式去掉多余空格和最后多余的&
+            var arr = q[1].replace(/\s+/g,"").replace(/&$/g,"").split("&");
+            var newQuery = {};
+            for(var i=0;i<arr.length;i++){
+                var arr2 = arr[i].split("=");
+                if (!arr2[1]) {
+                  newQuery[arr2[0]]="";
+                }else{
+                  newQuery[arr2[0]]=arr2[1];
+                }               
+            }
+            return newQuery;
+        }
+        var obj = parseQuery('http://blog.163.com/album?name=jerry&age=1');
+        console.log(obj);
+        obj = parseQuery('http://blog.163.com/album?name= tom &age=12&gender&');
+        console.log(obj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作业2</title>
+  <style>
+  *{
+      margin: 0;
+      padding: 0;
+      font: 14px Tahoma,Helvetica,Arial,'微软雅黑',sans-serif;
+    }
+    .table {
+      width: 640px; 
+      border-collapse: collapse;
+      margin: 32px;
+    }
+    .table caption{
+      font-weight: bold;
+      padding: 14px;
+    }
+    .table th,.table td {
+      border: 1px solid #c9c9c9; 
+      padding: 10px 20px; 
+      text-align: left;
+    }
+    .table th {
+      white-space: nowrap; 
+      background: #f7f7f7; 
+      color: #666; 
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<table class="table">
+  <caption align="top">运费详情</caption> 
+  <thead>
+    <tr><th>区域</th><th>寄达地</th><th>首重（元/1000g)</th><th>续重（元/1000g)</th></tr>
+  </thead>
+  <tbody>
+    <tr><th rowspan="2">一区</th><td>浙江、上海、江苏</td><td>6</td><td>1</td></tr>
+    <tr><td>江西、安徽</td><td>7</td><td>1</td></tr>
+    <tr><th>二区</th><td>吉林、黑龙江 、云南</td><td>10</td><td>6</td></tr>
+    <tr><th>三区</th><td>新疆、西藏</td><td>15</td><td>10</td></tr>
+  </tbody>
+</table>
+</body>
+</html>
